@@ -1,5 +1,10 @@
 # ceh-pmml-models
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ruivieira/ceh-pmml-models/master?filepath=models.ipynb)
+
+Example Jupyter notebook can be viewed [here](models.ipynb).
+It can be executed online [here](https://mybinder.org/v2/gh/ruivieira/ceh-pmml-models/master?filepath=models.ipynb).
+
 ## Predictions
 
 Sample output from [jpmml](https://github.com/jpmml/jpmml-evaluator):
@@ -21,4 +26,3 @@ Sample output from [jpmml](https://github.com/jpmml/jpmml-evaluator):
 ```
 
 Confidence can be extracted by matching with the predicted output label, *e.g.* for the second item above, `predicted_segment=0`, therefore the "confidence" is `probability_0=0.8285`.
-
