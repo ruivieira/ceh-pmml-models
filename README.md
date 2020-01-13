@@ -5,6 +5,13 @@
 Example Jupyter notebook can be viewed [here](models.ipynb).
 It can be executed online [here](https://mybinder.org/v2/gh/ruivieira/ceh-pmml-models/master?filepath=models.ipynb).
 
+## Models
+
+Models are in the [models](/models) folder. The two PMML files are:
+
+* `rf_segmentation.pmml` - a "large" model, with 1000 trees (10Mb)
+* `rf_segmentation_small.pmml` - a "smaller" model, with 162 trees (1.0Mb)
+
 ## Predictions
 
 Sample output from [jpmml](https://github.com/jpmml/jpmml-evaluator):
