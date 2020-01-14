@@ -9,27 +9,28 @@ It can be executed online [here](https://mybinder.org/v2/gh/ruivieira/ceh-pmml-m
 
 Models are in the [models](/models) folder. The two PMML files are:
 
-* `rf_segmentation.pmml` - a "large" model, with 1000 trees (10Mb)
-* `rf_segmentation_small.pmml` - a "smaller" model, with 162 trees (1.0Mb)
+* `rf_segmentation.pmml` - a "large" model, with 1000 trees (18Mb)
+* `rf_segmentation_small.pmml` - a "smaller" model, with 162 trees (2.7Mb)
+
+## Dataset
+
+A sample dataset is available [here](data/dataset.csv).
 
 ## Predictions
 
 Sample output from [jpmml](https://github.com/jpmml/jpmml-evaluator):
 
-```
+```text
 ------------------------------------------------------------------------------
-{age=ContinuousDouble{opType=continuous, dataType=double, value=23.859944060544702}, income=ContinuousDouble{opType=continuous, dataType=double, value=25.051352275926725}, class=ContinuousDouble{opType=continuous, dataType=double, value=0.0}, response=ContinuousDouble{opType=continuous, dataType=double, value=1.0}}
+{age=ContinuousDouble{opType=continuous, dataType=double, value=32.21556819580098}, income=ContinuousDouble{opType=continuous, dataType=double, value=5.370116396577485}, response=ContinuousDouble{opType=continuous, dataType=double, value=0.0}}
+{segment=0, probability_0=0.9032258064516129, probability_1=0.0967741935483871, probability_2=0.0, predicted_segment=0}
+------------------------------------------------------------------------------
+{age=ContinuousDouble{opType=continuous, dataType=double, value=30.23771420174174}, income=ContinuousDouble{opType=continuous, dataType=double, value=116.99344386773195}, response=ContinuousDouble{opType=continuous, dataType=double, value=1.0}}
 {segment=1, probability_0=0.0, probability_1=1.0, probability_2=0.0, predicted_segment=1}
 ------------------------------------------------------------------------------
-{age=ContinuousDouble{opType=continuous, dataType=double, value=56.65657833416327}, income=ContinuousDouble{opType=continuous, dataType=double, value=96.46775016719015}, class=ContinuousDouble{opType=continuous, dataType=double, value=0.0}, response=ContinuousDouble{opType=continuous, dataType=double, value=0.0}}
-{segment=0, probability_0=0.8285, probability_1=0.1715, probability_2=0.0, predicted_segment=0}
-------------------------------------------------------------------------------
-{age=ContinuousDouble{opType=continuous, dataType=double, value=41.1319853711761}, income=ContinuousDouble{opType=continuous, dataType=double, value=137.81214021370113}, class=ContinuousDouble{opType=continuous, dataType=double, value=2.0}, response=ContinuousDouble{opType=continuous, dataType=double, value=1.0}}
-{segment=2, probability_0=0.0, probability_1=0.0035, probability_2=0.9965, predicted_segment=2}
-------------------------------------------------------------------------------
-{age=ContinuousDouble{opType=continuous, dataType=double, value=48.015664108757235}, income=ContinuousDouble{opType=continuous, dataType=double, value=33.43913372384339}, class=ContinuousDouble{opType=continuous, dataType=double, value=1.0}, response=ContinuousDouble{opType=continuous, dataType=double, value=1.0}}
-{segment=2, probability_0=0.0, probability_1=0.1715, probability_2=0.8285, predicted_segment=2}
+{age=ContinuousDouble{opType=continuous, dataType=double, value=16.658638021134774}, income=ContinuousDouble{opType=continuous, dataType=double, value=221.54952628874256}, response=ContinuousDouble{opType=continuous, dataType=double, value=1.0}}
+{segment=2, probability_0=0.0, probability_1=0.04838709677419355, probability_2=0.9516129032258065, predicted_segment=2}
 ------------------------------------------------------------------------------
 ```
 
-Confidence can be extracted by matching with the predicted output label, *e.g.* for the second item above, `predicted_segment=0`, therefore the "confidence" is `probability_0=0.8285`.
+Confidence can be extracted by matching with the predicted output label, *e.g.* for the first item above, `predicted_segment=0`, therefore the "confidence" is `probability_0=0.9032258064516129`.
