@@ -4,3 +4,5 @@ numpy
 nyoka
 pandas
 sklearn
+sklearn-pandas
+sklearn2pmml
