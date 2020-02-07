@@ -11,14 +11,33 @@ Models are in the [models](/models) folder. The two PMML files are:
 
 * `rf_segmentation.pmml` - a "large" model, with 1000 trees (18Mb)
 * `rf_segmentation_small.pmml` - a "smaller" model, with 162 trees (2.7Mb)
+* `rf_segmentation_sklearn.pmml` - an `sklearn` model using the additional `events` feature
 
 ## Dataset
 
 A sample dataset is available [here](data/dataset.csv).
 
+## Inputs
+
+For the `rf_segmentation_sklearn.pmml` model the expected inputs are:
+
+* `age` as a `double`
+* `income` as a `double` (in terms of thousands/year, e.g. `100.0`)
+* `response` as an `integer`, representing (`0` no response, `1` response)
+* `events` as an `integer`, the campaign number coded as:
+  * Airlines, `0`
+  * Merchandise, `1`
+  * Hotel, `2`
+  * Online purchase, `3`
+  * Utilities, `4`
+  * Restaurantes, `5`
+  * Others, `6`
+
+The outputs are the probabilities of each segment (low, medium, high).
+
 ## Predictions
 
-Sample output from [jpmml](https://github.com/jpmml/jpmml-evaluator):
+Sample output from [jpmml](https://github.com/jpmml/jpmml-evaluator) with the `rf_segmentation_small.pmml` model:
 
 ```text
 ------------------------------------------------------------------------------
