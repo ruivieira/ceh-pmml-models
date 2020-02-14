@@ -43,7 +43,7 @@
 		<DataField name="income" optype="continuous" dataType="double"/>
 	</DataDictionary>
 	<TransformationDictionary/>
-	<MiningModel functionName="classification">
+	<MiningModel modelName="RandomForestClassifier" functionName="classification">
 		<MiningSchema>
 			<MiningField name="segment" usageType="target"/>
 			<MiningField name="income"/>
