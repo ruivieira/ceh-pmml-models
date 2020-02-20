@@ -20,7 +20,7 @@
                        n_jobs=None, oob_score=False, random_state=None,
                        verbose=0, warm_start=False))])</Extension>
 	</MiningBuildTask>
-	<DataDictionary>
+	<DataDictionary numberOfFields="5">
 		<DataField name="segment" optype="categorical" dataType="integer">
 			<Value value="0"/>
 			<Value value="1"/>
@@ -46,15 +46,16 @@
 	<MiningModel modelName="RandomForestClassifier" functionName="classification">
 		<MiningSchema>
 			<MiningField name="segment" usageType="target"/>
-			<MiningField name="income"/>
-			<MiningField name="age"/>
-			<MiningField name="events"/>
-			<MiningField name="response"/>
+			<MiningField name="income" usageType="active"/>
+			<MiningField name="age" usageType="active"/>
+			<MiningField name="events" usageType="active"/>
+			<MiningField name="response" usageType="active"/>
 		</MiningSchema>
 		<Output>
 			<OutputField name="probability(0)" optype="continuous" dataType="double" feature="probability" value="0"/>
 			<OutputField name="probability(1)" optype="continuous" dataType="double" feature="probability" value="1"/>
 			<OutputField name="probability(2)" optype="continuous" dataType="double" feature="probability" value="2"/>
+			<OutputField name="predicted_segment" optype="categorical" dataType="integer" feature="predictedValue"/>
 		</Output>
 		<LocalTransformations>
 			<DerivedField name="encoder(response)" optype="categorical" dataType="double">
